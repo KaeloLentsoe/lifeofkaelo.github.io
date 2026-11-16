@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LifeOfKaelo — A life in the making</title>
+<meta name="description" content="A personal documentary and digital journal. Finding a balanced life in the digital age.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F1EEE5;--ink:#292E28;--moss:#697461;--ocean:#526F7A;--stone:#D5D0C4;--soft:#4b524a;--ph:#e4dfd2;
+--serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1f231e;--ink:#ebe7dc;--moss:#9fae95;--ocean:#8fb0bc;--stone:#3a4038;--soft:#b9b6aa;--ph:#2a2f28;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#1f231e;--ink:#ebe7dc;--moss:#9fae95;--ocean:#8fb0bc;--stone:#3a4038;--soft:#b9b6aa;--ph:#2a2f28;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 var(--sans)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ocean);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--stone)}
+header .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;justify-content:space-between;padding-top:20px;padding-bottom:16px}
+.mark{font:500 22px var(--serif);text-decoration:none;letter-spacing:.01em}
+nav{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px}
+nav a{text-decoration:none;color:var(--soft);padding:2px 0;border-bottom:1px solid transparent}
+nav a:hover,nav a[aria-current=page]{color:var(--ink);border-color:var(--moss)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(34px,6vw,56px)}h2{font-size:clamp(26px,3.6vw,34px)}h3{font-size:21px}
+p{margin:0 0 1em}
+.lede{font:400 20px/1.7 var(--serif);max-width:60ch}
+.meta{font-size:14px;color:var(--soft)}
+.small-label{font-size:13px;letter-spacing:.08em;color:var(--moss);text-transform:uppercase}
+section{padding:56px 0;border-top:1px solid var(--stone)}
+section:first-child{border-top:0}
+.hero{display:grid;gap:40px;grid-template-columns:1fr;padding:56px 0 48px}
+@media(min-width:820px){.hero{grid-template-columns:1.15fr .85fr;align-items:end}}
+.ph{background:var(--ph);border:1px dashed var(--moss);display:flex;align-items:flex-end;padding:12px;font-size:13px;color:var(--soft);min-height:160px;margin:0}
+.r43{aspect-ratio:4/3}.r32{aspect-ratio:3/2}.r11{aspect-ratio:1}
+.grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{display:block;text-decoration:none;border-top:1px solid var(--ink);padding-top:14px}
+.card:hover h3{text-decoration:underline;text-decoration-color:var(--moss);text-underline-offset:4px}
+.card p{color:var(--soft);font-size:15.5px;margin:.2em 0 .6em}
+.tag{display:inline-block;font-size:13px;color:var(--moss)}
+.btn{display:inline-block;font:500 15px var(--sans);padding:10px 18px;border:1px solid var(--ink);background:none;color:var(--ink);text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.two{display:grid;gap:36px;grid-template-columns:1fr}
+@media(min-width:820px){.two{grid-template-columns:1fr 2fr}}
+.explore{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.explore li{padding:16px 0;border-top:1px solid var(--stone);font:400 20px/1.5 var(--serif)}
+.explore li span{display:block;font:400 14px var(--sans);color:var(--soft);margin-top:2px}
+article{max-width:68ch}article p{font:400 19px/1.8 var(--serif)}
+.back{display:inline-block;margin-bottom:24px;font-size:15px;color:var(--soft)}
+dl.exp dt{font:500 15px var(--sans);color:var(--moss);margin-top:18px}
+dl.exp dd{margin:2px 0 0;max-width:62ch}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 32px}
+.filters button{font:14px var(--sans);padding:5px 12px;border:1px solid var(--stone);background:none;color:var(--ink);cursor:pointer;border-radius:99px}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.empty{padding:24px;border:1px dashed var(--stone);color:var(--soft)}
+.note{border-left:3px solid var(--ocean);padding:4px 16px;color:var(--soft);font-size:15px;margin:24px 0}
+footer{border-top:1px solid var(--stone);padding:32px 0 40px;font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+@media(prefers-reduced-motion:no-preference){main{animation:in .5s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="mark" href="#home">LifeOfKaelo</a>
+<nav aria-label="Main"><a href="#journal" data-n="journal">Journal</a><a href="#films" data-n="films">Films</a><a href="#experiments" data-n="experiments">Experiments</a><a href="#work" data-n="work">Work</a><a href="#about" data-n="about">About</a><a href="#newsletter" data-n="newsletter">Newsletter</a><a href="#contact" data-n="contact">Contact</a></nav></div></header>
+<main id="app" class="wrap" tabindex="-1"></main>
+<footer><div class="wrap"><span>© <span id="yr"></span> LifeOfKaelo</span><span id="soc"></span></div></footer>
+
+<script>
+/* ============ EDIT HERE: all site content lives in this CONFIG object ============ */
+const CONFIG={
+ substack:"https://creatiiveclarity.substack.com/", // as supplied in the brief – please double-check spelling
+ email:"",            // add an address to enable the contact button
+ social:[{name:"YouTube",url:"https://www.youtube.com/@LifeOfKaelo"},{name:"Creative Clarity",url:"https://creatiiveclarity.substack.com/"}],
+ youtubeChannel:"https://www.youtube.com/@LifeOfKaelo", // shown as "Watch on YouTube"
+ topics:["Self & Inner Life","Learning & Creativity","Technology & Society","Value & Regeneration","Field Notes"],
+ exploring:[
+  ["How much of my attention is actually mine?","Watching how phones and feeds shape an ordinary day."],
+  ["What does it mean to live deliberately?","Small trials, honest notes, no verdicts yet."],
+  ["How do communities recognise value?","Reading and asking questions about regenerative systems."],
+  ["What does learning data and AI teach me about thinking?","Learning in public, mistakes included."]],
+ // Replace with real entries. status:"draft" entries are hidden.
+ journal:[
+  {slug:"sample-field-note",title:"Sample field note: a walk without headphones",date:"2026-01-01",topic:"Field Notes",read:3,status:"published",excerpt:"Placeholder entry. Replace with a real note from your own day.",body:["This is placeholder text so you can see how an entry reads. Delete it and write your own.","Each entry supports a title, date, topic, excerpt, reading time and body. Add more paragraphs by adding more strings to the body list."]},
+  {slug:"sample-essay",title:"Sample essay: what I am not sure about",date:"2026-01-02",topic:"Self & Inner Life",read:6,status:"published",excerpt:"Placeholder entry about uncertainty and unfinished thinking.",body:["Placeholder. Your first real essay goes here.","Nothing on this page has been written by Kaelo yet."]},
+  {slug:"sample-reading",title:"Sample reading reflection",date:"2026-01-03",topic:"Learning & Creativity",read:4,status:"published",excerpt:"Placeholder for a note on a book that changed how you think.",body:["Placeholder text."]}],
+ // youtube: put the 11-character video ID in id to enable the embed
+ films:[
+  {title:"Sample film: add your first documentary",id:"",date:"2026-01-01",desc:"Placeholder. Add a YouTube video ID to turn this into a real embed.",topic:"Field Notes"},
+  {title:"Sample film: a second entry",id:"",date:"2026-01-02",desc:"Placeholder description for a second video.",topic:"Self & Inner Life"}],
+ experiments:[
+  {title:"Sample experiment: a week of single-tasking",status:"placeholder",q:"Can I do one thing at a time for seven days?",why:"Placeholder: why you wanted to try it.",tried:"Placeholder: what you actually did.",saw:"Placeholder: what you observed.",surprise:"Placeholder: what surprised you.",learned:"Placeholder: what you learned.",open:"Placeholder: what is still unresolved."}],
+ work:[
+  {title:"ReFi Loop",status:"In progress",summary:"Placeholder summary. Replace with factual, supportable details only.",role:"Add your actual role here.",method:"Add methods here.",evidence:"Add public links or outputs here.",lessons:"Add lessons learned here."},
+  {title:"Data-as-a-product learning",status:"Idea",summary:"Placeholder. Mark honestly whether this is an idea, in progress or completed.",role:"To be added.",method:"To be added.",evidence:"None yet.",lessons:"To be added."}]
+};
+/* ================================================================================== */
+const $=s=>document.querySelector(s),app=$("#app");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=d=>new Date(d+"T00:00:00").toLocaleDateString("en-ZA",{day:"numeric",month:"long",year:"numeric"});
+const pub=()=>CONFIG.journal.filter(e=>e.status==="published").sort((a,b)=>b.date.localeCompare(a.date));
+const ph=(t,c="r43")=>`<figure class="ph ${c}" role="img" aria-label="Placeholder: ${esc(t)}">Photo placeholder: ${esc(t)}</figure>`;
+const entryCard=e=>`<a class="card" href="#j-${e.slug}"><span class="tag">${esc(e.topic)}</span><h3>${esc(e.title)}</h3><p>${esc(e.excerpt)}</p><span class="meta">${fmt(e.date)} · ${e.read} min read</span></a>`;
+const filmCard=(f,i)=>`<a class="card" href="#f-${i}"><span class="tag">${esc(f.topic)}</span><h3>${esc(f.title)}</h3><p>${esc(f.desc)}</p><span class="meta">${fmt(f.date)}</span></a>`;
+const ytBox=(f,i)=>f.id?`<div id="yt${i}" class="ph r32" style="align-items:center;justify-content:center"><button class="btn" data-play="${i}">Play video (loads YouTube)</button></div>`:ph("video placeholder, add a YouTube ID in CONFIG","r32");
+const none=m=>`<p class="empty">${m}</p>`;
+const subscribe=`<a class="btn" href="${CONFIG.substack}" target="_blank" rel="noopener">Explore Creative Clarity</a>`;
+
+const pages={
+home(){const p=pub(),f=CONFIG.films[0];return `
+<section class="hero"><div>
+<p class="small-label">A personal documentary</p><h1>A life in the making.</h1>
+<p class="lede">Finding a balanced life in the digital age. Notes on becoming, technology, creativity, and the questions that shape how we live.</p>
+<p style="max-width:56ch">I’m documenting my journey of learning to live more deliberately — exploring the self, creativity, spirituality, technology, and the questions that emerge along the way.</p>
+<p style="max-width:56ch">This isn’t a collection of answers. It’s a record of what I’m learning, what I’m questioning, and what I’m discovering about being human.</p>
+<p style="max-width:56ch">Perhaps something here will resonate with your own journey.</p>
+<div class="row"><a class="btn" href="#journal">Read the journal</a><a class="btn" href="#films">Watch the films</a></div></div>
+${ph("an ordinary daylight photo from your own life","r43")}</section>
+<section><h2>Films from the journey</h2><p class="lede">Experiences and questions documented as they unfold.</p>
+${f?`<div class="two" style="margin-top:28px">${filmCard(f,0)}<div>${ytBox(f,0)}</div></div>`:none("No films yet.")}</section>
+<section><h2>Currently exploring</h2><p class="lede">Some questions take longer than a single essay or experiment to understand. These are the ones I’m spending time with.</p>
+<ul class="explore" style="margin-top:24px">${CONFIG.exploring.map(x=>`<li>${esc(x[0])}<span>${esc(x[1])}</span></li>`).join("")}</ul></section>
+<section><h2>From the journal</h2><p class="lede">Reflections, field notes, and ideas still taking shape.</p>
+<div class="grid" style="margin-top:28px">${p.slice(0,3).map(entryCard).join("")||none("Nothing published yet.")}</div></section>
+<section><h2>Selected projects and experiments</h2><div class="grid" style="margin-top:20px">${CONFIG.work.slice(0,2).map(w=>`<a class="card" href="#work"><span class="tag">${esc(w.status)}</span><h3>${esc(w.title)}</h3><p>${esc(w.summary)}</p></a>`).join("")}${CONFIG.experiments.slice(0,1).map(x=>`<a class="card" href="#experiments"><span class="tag">Experiment</span><h3>${esc(x.title)}</h3><p>${esc(x.q)}</p></a>`).join("")}</div></section>
+<section><h2>Letters from the journey</h2><p class="lede">Creative Clarity is where I explore the ideas behind the experiences — through writing on self-discovery, technology, value, and what it means to live well.</p><div class="row">${subscribe}</div></section>`},
+journal(){const t=(location.hash.split("~")[1]||"");const p=pub().filter(e=>!t||e.topic===decodeURIComponent(t));return `
+<section><h1>Journal</h1><p class="lede">Essays, field notes, reading reflections and ideas in development.</p>
+<div class="filters" role="group" aria-label="Filter by topic"><button aria-pressed="${!t}" data-t="">All</button>${CONFIG.topics.map(x=>`<button aria-pressed="${decodeURIComponent(t)===x}" data-t="${esc(x)}">${esc(x)}</button>`).join("")}</div>
+<div class="grid">${p.map(entryCard).join("")||none("Nothing in this topic yet.")}</div></section>`},
+films(){return `<section><h1>Films</h1><p class="lede">The visual documentary side of LifeOfKaelo, hosted on YouTube.</p>
+${CONFIG.youtubeChannel?`<p><a class="btn" href="${CONFIG.youtubeChannel}" target="_blank" rel="noopener">Watch on YouTube</a></p>`:""}
+<div class="grid" style="margin-top:28px">${CONFIG.films.map(filmCard).join("")||none("No films yet.")}</div></section>`},
+experiments(){return `<section><h1>Experiments</h1><p class="lede">Learning through practice. These are evolving investigations, not proof of mastery.</p>
+${CONFIG.experiments.map(x=>`<div style="margin-top:40px;border-top:1px solid var(--ink);padding-top:16px"><h3>${esc(x.title)}</h3><dl class="exp">${[["The question",x.q],["Why I wanted to explore it",x.why],["What I tried",x.tried],["What I observed",x.saw],["What surprised me",x.surprise],["What I learned",x.learned],["What remains unresolved",x.open]].map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl></div>`).join("")||none("No experiments yet.")}</section>`},
+work(){return `<section><h1>Work &amp; projects</h1><p class="lede">Selected work, clearly separated into ideas, work in progress and completed projects.</p>
+${CONFIG.work.map(w=>`<div style="margin-top:40px;border-top:1px solid var(--ink);padding-top:16px"><span class="tag">${esc(w.status)}</span><h3>${esc(w.title)}</h3><p>${esc(w.summary)}</p><dl class="exp">${[["My role",w.role],["Approach and methods",w.method],["Evidence and public outputs",w.evidence],["Lessons learned",w.lessons]].map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl></div>`).join("")}</section>`},
+about(){return `<section class="two"><div>${ph("portrait or a place that matters to you","r11")}</div><div><h1>About</h1>
+<p class="note">Placeholder draft. Rewrite this in your own words before publishing.</p>
+<p class="lede">LifeOfKaelo exists to document how I’m learning to live, what I’m discovering about myself, and what those discoveries might offer others.</p>
+<p>I’m interested in self-discovery and intentional living, and in how spirituality, technology, creativity and value fit together. I document rather than instruct, because I haven’t figured life out and don’t want to pretend otherwise.</p>
+<h3>What I’m learning now</h3><p>See <a href="#home">Currently exploring</a>. It changes as I do.</p>
+<h3>Connect</h3><p>Readers and collaborators are welcome. Start on the <a href="#contact">contact page</a>.</p></div></section>`},
+newsletter(){return `<section><h1>Newsletter</h1><p class="lede">LifeOfKaelo documents the lived experience. Creative Clarity, my Substack publication, explores the questions and ideas that come out of it.</p>
+<p>Subscribing and reading happen on Substack, so there is only one newsletter to keep track of.</p>
+<div class="row"><a class="btn" href="${CONFIG.substack}" target="_blank" rel="noopener">Read and subscribe on Substack</a></div>
+<p class="meta" style="margin-top:28px">Recent essays can be listed here once you choose which ones to feature.</p></section>`},
+contact(){return `<section><h1>Contact</h1><p class="lede">For readers, collaborators and professional opportunities.</p>
+${CONFIG.email?`<p><a class="btn" href="mailto:${CONFIG.email}">Send an email</a></p>`:`<p class="empty">No contact method is set up yet. Add an email address to CONFIG in the page source to show a button here.</p>`}</section>`}
+};
+function article(html){return `<section><a class="back" href="#journal">Back to the journal</a>${html}</section>`}
+function route(){
+ const h=(location.hash||"#home").slice(1);let page=h.split("~")[0],html,title="";
+ if(page.startsWith("j-")){const e=pub().find(x=>x.slug===page.slice(2));
+  html=e?article(`<article><p class="tag">${esc(e.topic)}</p><h1>${esc(e.title)}</h1><p class="meta">${fmt(e.date)} · ${e.read} min read</p>${e.body.map(b=>`<p>${esc(b)}</p>`).join("")}</article>`):article(none("That entry doesn’t exist."));title=e?e.title:"";page="journal"}
+ else if(page.startsWith("f-")){const i=+page.slice(2),f=CONFIG.films[i];
+  html=f?`<section><a class="back" href="#films">Back to films</a><h1>${esc(f.title)}</h1><p class="meta">${fmt(f.date)}</p>${ytBox(f,i)}<p style="margin-top:20px;max-width:62ch">${esc(f.desc)}</p></section>`:none("That film doesn’t exist.");title=f?f.title:"";page="films"}
+ else{html=(pages[page]||pages.home)();if(!pages[page])page="home";title=page==="home"?"":page[0].toUpperCase()+page.slice(1)}
+ app.innerHTML=html;document.title=(title?title+" — ":"")+"LifeOfKaelo"+(title?"":" — A life in the making");
+ document.querySelectorAll("nav a").forEach(a=>a.dataset.n===page?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+ window.scrollTo(0,0);
+}
+app.addEventListener("click",e=>{
+ const t=e.target.closest("[data-t]");if(t){location.hash="#journal"+(t.dataset.t?"~"+encodeURIComponent(t.dataset.t):"")}
+ const p=e.target.closest("[data-play]");if(p){const f=CONFIG.films[+p.dataset.play];const b=p.parentElement;b.style.padding=0;
+  b.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(f.id)}" title="${esc(f.title)}" style="width:100%;height:100%;border:0" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`}
+});
+addEventListener("hashchange",route);route();
+$("#yr").textContent=new Date().getFullYear();
+$("#soc").innerHTML=CONFIG.social.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(" &nbsp; ")||`<a href="${CONFIG.substack}" target="_blank" rel="noopener">Creative Clarity</a>`;
+</script>
+</body>
+</html>
